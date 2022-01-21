@@ -374,8 +374,38 @@ class Character extends FlxSprite
 				height -= 100;
 	
 				antialiasing = false;
-	
+				
 				flipX = true;
+	
+			case 'sasha':
+				// DAD ANIMATION?
+				//ANIMATIONS FROM TEXT FILE WIP!?!?!?!
+
+				//loadAnimations(); beta
+
+				tex = Paths.getSparrowAtlas('characters/week1/Sasha');
+				frames = tex;
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+
+				loadOffsetFile(curCharacter);
+
+				playAnim('idle');
+				
+			case 'bf-scared':
+				var tex = Paths.getSparrowAtlas('characters/bf-scared');
+				frames = tex;
+				boyfriendAnimation();
+
+				loadOffsetFile(curCharacter);
+
+				playAnim('idle');
+
+				flipX = true;
+				
 		}
 
 		dance();
